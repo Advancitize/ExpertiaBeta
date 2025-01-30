@@ -1,6 +1,6 @@
 // Mock database for users
 const users = [
-    { email: "dhsnv34kfds@hehe.sigma", password: "Kenjiisthebestbrawler" },
+    { email: "adminlogin@advancitize.org", password: "adminExpertia" },
 ];
 
 // Toggle Sign Up and Sign In sections
