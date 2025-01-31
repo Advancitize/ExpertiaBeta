@@ -13,10 +13,11 @@
         <nav class="navbar">
             <a href="index.html" class="logo">Advancitize</a>
             <ul>
-                <li><a href="site.html">Home</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="https://improved-winner-g4rq66vv6rwghv6p5-3000.app.github.dev/">Proxy</a></li>
-                <li><a href="settings.html">Settings</a></li>
+                <!-- Add onclick event to each link to play sound and delay navigation -->
+                <li><a href="index.html" onclick="playSound(event, 'index.html')">Home</a></li>
+                <li><a href="games.html" onclick="playSound(event, 'games.html')">Games</a></li>
+                <li><a href="https://improved-winner-g4rq66vv6rwghv6p5-3000.app.github.dev/" onclick="playSound(event, 'https://improved-winner-g4rq66vv6rwghv6p5-3000.app.github.dev/')">Proxy</a></li>
+                <li><a href="settings.html" onclick="playSound(event, 'settings.html')">Settings</a></li>
             </ul>
         </nav>
 
@@ -31,25 +32,251 @@
             <div class="login-wrapper">
                 <div class="login-box">
                     <form action="">
-                        <h1>Login</h1>
-                        <div class="input-box">
-                            <input type="text" placeholder="Username" required>
-                            <i class='bx bxs-user'></i>
-                        </div>
-                        <div class="input-box">
-                            <input type="password" placeholder="Password" required>
-                            <i class='bx bxs-lock-alt'></i>
-                        </div>
-                        <div class="remember-forgot">
-                            <label><input type="checkbox">Remember me</label>
-                            <a href="#">Forgot Password?</a>
-                        </div>
-                        <a href="site.html" class="btn">Login</a>
-                        
-                        <div class="register-link">
-                            <p>Don't have an account?</p>
-                            <a href="#">Register</a>
-                        </div>
+                        <ul id="hexGrid">
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/8sIczQtutypEpXcbFagoVrG3W0w-mh9LxCrZ5IYmq5Q/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mYWYt/Z2FtZXMuZ2l0aHVi/LmlvL2Fzc2V0cy9p/bWcvMjA0OC8yMDQ4/LndlYnA" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/me2-VX4ojhbjmKeDiZk0MUqPuRSb4ScPaZewSf8sc5g/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aWN0bmV0LmVzL2lt/Z3MvZmlyZWJveS1h/bmQtd2F0ZXJnaXJs/XzIuanBn" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/tYZl8_ni908oVX74fLhGqt7C-oN2ZJ2A-XqwXl3J_DA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mYWYt/Z2FtZXMuZ2l0aHVi/LmlvL2Fzc2V0cy9p/bWcvdmV4Ni92ZXg2/LndlYnA" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/9bhfcyCFLElPLL63l3pw8T1aHE_t8WAJ26RTxMUiGXk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91bmJs/b2NrZWQtZ2FtZXMu/czMuYW1hem9uYXdz/LmNvbS9tZWRpYS9w/b3N0cy81MjEvRm9v/dGJhbGwtTGVnZW5k/cy1nYW1lLndlYnA" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/g4O-LGpbG07PkFZHFG1DhHr6Ywsb3D3LcLB0gfQjNfI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91bmJs/b2NrZWQtZ2FtZXMu/czMuYW1hem9uYXdz/LmNvbS9tZWRpYS9w/b3N0cy80OTYvaWRs/ZS1icmVha291dC53/ZWJw" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/MOsGLmsqtEzcv2Z9zVrIPHlf4QzFvU1pS4-BTkJgkjY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aWN0bmV0LmVzL2lt/Z3MvcGFwZXJpbzIt/Mi5qcGc" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/-o_6jZAQl9o4nFzruavJKUY9dlBObq91b8XxP4tfxtY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mYWYt/Z2FtZXMuZ2l0aHVi/LmlvL2Fzc2V0cy9p/bWcvcGVuYWx0eWtp/Y2tvbmxpbmUvcGVu/YWx0eS1raWNrLW9u/bGluZS53ZWJw" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/bXmyV361u1vidbqqftscdyfDFyCIm0IGm1QZQeAG8N0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWdz/LmNyYXp5Z2FtZXMu/Y29tL2Z1bm55LXNo/b290ZXItMl8xNng5/LzIwMjQxMTEzMDkw/ODE1L2Z1bm55LXNo/b290ZXItMl8xNng5/LWNvdmVyP2F1dG89/Zm9ybWF0LGNvbXBy/ZXNzJnE9OTAmY3M9/c3RyaXAmdz0yNzMm/Zml0PWNyb3A" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/FNXfYl9T3FDjyoRAGEOaZuYJf69wUuusmO9Fy2ABXbQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zbG9w/ZWdhbWUzZC5pby9k/YXRhL2ltYWdlL2dh/bWUvc2xvcGUtZ2Ft/ZS1vYmplY3RpdmUu/anBn" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="1v1.LOL.webp" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/dJMXjjfKdcOgChae2aZVDBkEDz1GFgKQ2KoXoqra150/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuaGFoYWdhbWVz/LmNvbS9tZWRpYS8y/MDIzLzAzLzE3Lzkz/M2M4ZDY4LWVmNzkt/NDBjZS1hNzNjLWVm/ODQ5NjZhMjJiZF8z/MjB4MTk1LndlYnA" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/4t2vfmd7E-8KkjiQcrUb-UsOntWg0Lsm8Eva7H1tw4s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/cG9raS1jZG4uY29t/L2Nkbi1jZ2kvaW1h/Z2UvcXVhbGl0eT03/OCx3aWR0aD0yMDQs/aGVpZ2h0PTIwNCxm/aXQ9Y292ZXIsZj1h/dXRvLzliMzczYjUy/MTljZDY2YTgyMzg5/ZDgxZDdjZGE4ZTIz/LmpwZWc" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/L749WmQMYobvmAWL5HTNDfVcfL5z19UoRaADBF1oxKo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aG9vZGFtYXRoLmNv/bS9sYXJnZS9ibG9j/a2JsYXN0XzMwMHgy/MjUuanBn" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                              <div class="hexIn">
+                                <a class="hexLink" href="#">
+                                  <img src="https://imgs.search.brave.com/ap0_4e9RKJ7My3apnrke2nDxhkwjQtx-pp63C_XnG7w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YXRj/aGRvY3VtZW50YXJp/ZXMuY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9taW5lY3JhZnQt/Z2FtZS0zNjB4MjAz/LmpwZw" alt="" />
+                                  <h1>This is a title</h1>
+                                  <p>Some sample text about the article this hexagon leads to</p>
+                                </a>
+                              </div>
+                            </li>
+                            <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="https://imgs.search.brave.com/CYIRnIquPy-ZLClxZagc34I2us8dk3KwXUiYSlDpp3s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y29va2llY2xpY2tl/ci11bmJsb2NrZWQu/bmV0L19uZXh0L2lt/YWdlP3VybD0vaW1h/Z2VzL2dhbWVzL3Vu/YmxvY2tlZC1jb29r/aWUtY2xpY2tlci1n/YW1lLndlYnAmdz0z/ODQwJnE9NzU" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="https://imgs.search.brave.com/zMxuDaL4uwTP4GkS_WaqHYkKW1KykqrDPlaHlrCfBpk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91Ymc5/OC5naXRodWIuaW8v/YXNzZXRzL2ltZy9n/YW1lcy9zdXBlci1t/YXJpby13b25kZXIu/cG5n" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="https://imgs.search.brave.com/I_RjxzaNmI05pZC4b6m__bBIT6eJNQ0OTaMAPYqGUU4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yZXBv/c2l0b3J5LWltYWdl/cy5naXRodWJ1c2Vy/Y29udGVudC5jb20v/NTczMjgwNTM5LzM0/Y2ViZWZjLWExNTYt/NGJiNi1hYTM1LTY1/MTdmNzU4YzVkOQ" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="https://imgs.search.brave.com/DrwxXFuwkcAhSR-I9JVi3lVcLFBGEswpnKwKy2392MU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91bmJs/b2NrZWRnYW1lcy5i/bG9nYnVja2V0Lm9y/Zy93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Mi8xMC9zb25pYy0z/LTI3MHgyMDAuanBn" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="https://imgs.search.brave.com/S2rkR603oVU3faOJocevZezBrH0aCTngk4UnVwYFjQ0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91bmJs/b2NrZWQtZ2FtZXMu/czMuYW1hem9uYXdz/LmNvbS9tZWRpYS9w/b3N0cy81NTAvd29y/bGRzLWhhcmRlc3Qt/Z2FtZS53ZWJw" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="https://imgs.search.brave.com/x5H-VBE0ncOZnDEhTym3AXwY3ugoWCgVf-f4FDdX0Bo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cmFkeW9sb2ppbmV0/LmNvbS9yZXNpbS9y/YWR5b2xvamluZXQv/cm5fYXJjYWRlX2dh/bWVzX21vcnRhbF9r/b21iYXRfay5qcGc" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="https://imgs.search.brave.com/HT4Q9D3CYHi2U-g8V4c5N4CPh3ZUEUl4EKEHra3fm60/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91bmJs/b2NrZWQtZ2FtZXMu/b3JnL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDI0LzAzL2Ftb25n/LXVzLXVuYmxvY2tl/ZC0zMDB4MzAwLmpw/Zw" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="https://imgs.search.brave.com/6rwro2Nms6tJAv59YTklyrz7jjcC3uaIpUJ9MgwLD3I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mcmVl/emVub3ZhLmdpdGh1/Yi5pby9tZWRpYS9w/b3N0cy81MzkvZHVj/ay1saWZlLndlYnA" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="https://imgs.search.brave.com/Jb_G4wLfp4CERpn6dbJ156-AlBqSQDllZg2uN4WMnH8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mYWYt/Z2FtZXMuZ2l0aHVi/LmlvL2Fzc2V0cy9p/bWcvcGFjbWFuL3Bh/Y21hbi53ZWJw" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="https://imgs.search.brave.com/6z3HSgePMziFnAqOhE0VgvIurMDUgTOjaipF76fiT1Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9saDMu/Z29vZ2xldXNlcmNv/bnRlbnQuY29tL09S/WjVLSFc4ekpFOG51/TEpTTnVLenR2Y3ll/aHlvM0dSQWduYTJQ/OG9RNGVhTWZ5OUJi/TklqeFN1M2ZHOFJ0/emFHY2JNQ1hHV2VV/aHBNOHJUWHNJbmdh/LTNwX1k9czI3NS13/Mjc1LWgxNzU" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="https://imgs.search.brave.com/iLs7pbO6NeClDwbJbTx3XqgVfulkvQO7201mJXb8b_8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9saDMu/Z29vZ2xldXNlcmNv/bnRlbnQuY29tL0lD/WWotRDBQN2NDNXcy/ZmtjSlM4eldwcnY1/WjktMWxaQy10dHAt/V3cyU19vUzBtdlpU/cFdGblBrYzlSUnpZ/TDFwaTBaTU51V3Bv/WmM4aWdlUW5YV1pq/RWZMdz1zMjc1LXcy/NzUtaDE3NQ" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="Moto X3m.webp" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                              <li class="hex">
+                                <div class="hexIn">
+                                  <a class="hexLink" href="#">
+                                    <img src="https://imgs.search.brave.com/iAaR8giqk29qc4iG9ym6qNe200s9-HRUcz82gwhL798/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWdz/Mi5kYWIzZ2FtZXMu/Y29tL3N0aWNrbWFu/LWd0YS1nYW1lLWZ0/LnBuZw" alt="" />
+                                    <h1>This is a title</h1>
+                                    <p>Some sample text about the article this hexagon leads to</p>
+                                  </a>
+                                </div>
+                              </li>
+                          </ul>
                     </form>
                 </div>
             </div>
