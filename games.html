@@ -1,67 +1,99 @@
-<!doctype html>
-<html>
-  <link rel="stylesheet" href="games.css">
-  <link rel="icon" href="favicon.png" type="image/x-icon">
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expertia | Games</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="games.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
     <nav class="navbar">
-      <a href="site.html" class="logo">Advancitize</a>
-      <ul>
-          <li> <a href="site.html">Home</a></li>
-          <li> <a href="games.html">Games</a></li>
-          <li> <a href="https://canlite.online/proxe/">Proxy</a></li>
-          <li> <a href="settings.html">Settings</a></li>
-      </ul>
-      
-  </nav>
+        <a href="site.html" class="logo">Advancitize</a>
+        <ul>
+            <li><a href="site.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="https://canlite.online/proxe/">Proxy</a></li>
+            <li><a href="settings.html">Settings</a></li>
+        </ul>
+    </nav>
+
     <main>
-      <div class="login-btn">
-        <a href="games.html" class="btn">Games</a>
-      </div>     
-      <div class="card">
-        <img src="Slope.webp" alt="Slope Game Thumbnail" class="card-image">
-        <a href="/ExpertiaBeta/games/slope/index.html" class="gamelogo">Slope</a>
-    </div>
-  </div>     
-  
-  <div class="card">
-    <img src="Moto X3m.webp" alt="Moto X3mThumbnail" class="card-image">
-    <a href="/ExpertiaBeta/games/motox3m/index.html" class="gamelogo">Moto X3m</a>
-</div>  
+        <div class="login-btn">
+            <a href="games.html" class="btn">Games</a>
+        </div>  
 
-<div class="card">
-  <img src="1v1.LOL.webp" alt="1V1.LOL Thumbnail" class="card-image">
-  <a href="/ExpertiaBeta/games/1v1lol/index.html" class="gamelogo">1V1.LOL</a>
-</div>  
+        <div class="card">
+            <img src="Slope.webp" alt="Slope Game Thumbnail" class="card-image">
+            <a href="/ExpertiaBeta/games/slope/index.html" class="gamelogo">Slope</a>
+        </div>
 
-<div class="card">
-  <img src="BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
-  <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
-</div>
+        <div class="card">
+            <img src="Moto X3m.webp" alt="Moto X3m Thumbnail" class="card-image">
+            <a href="/ExpertiaBeta/games/motox3m/index.html" class="gamelogo">Moto X3m</a>
+        </div>  
 
-<div class="card">
-  <img src="BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
-  <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
-</div>
+        <div class="card">
+            <img src="1v1.LOL.webp" alt="1V1.LOL Thumbnail" class="card-image">
+            <a href="/ExpertiaBeta/games/1v1lol/index.html" class="gamelogo">1V1.LOL</a>
+        </div>  
 
-<div class="card">
-  <img src="BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
-  <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
-</div>
+        <div class="card">
+            <img src="BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
+            <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
+        </div>
 
-<div class="card">
-  <img src="BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
-  <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
-</div>
+        <div class="card">
+            <img src="BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
+            <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
+        </div>
 
-<div class="card">
-  <img src="BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
-  <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
-</div>
+        <div class="card">
+            <img src="BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
+            <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
+        </div>
 
+        <div class="card">
+            <img src="BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
+            <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
+        </div>
 
+        <div class="card">
+            <img src="BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
+            <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
+        </div>
     </main>
-  </body>
+
+    <!-- Click Sound -->
+    <audio id="clickSound" src="sounds/zapsplat_multimedia_button_click_bright_002_92099.mp3" preload="auto" muted></audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const clickSound = document.getElementById("clickSound");
+
+            if (!clickSound) {
+                console.error("Audio file not found!");
+                return;
+            }
+
+            // Enable sound after first user interaction (fixes browser autoplay restriction)
+            document.body.addEventListener("pointerdown", function enableSound() {
+                clickSound.muted = false;
+                document.body.removeEventListener("pointerdown", enableSound);
+            });
+
+            // Select all buttons and links
+            const elements = document.querySelectorAll("a, button, input[type='submit']");
+
+            elements.forEach(element => {
+                element.addEventListener("pointerdown", () => {
+                    console.log("Button clicked!");
+                    clickSound.currentTime = 0;
+                    clickSound.play().catch(err => console.warn("Playback prevented:", err));
+                });
+            });
+        });
+    </script>
+
+</body>
 </html>

@@ -1,22 +1,59 @@
-<!doctype html>
-<html>
-  <link rel="stylesheet" href="games.css">
-  <link rel="icon" href="favicon.png" type="image/x-icon">
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expertia | Settings</title>
-  </head>
-  <body>
+    <link rel="stylesheet" href="games.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
     <nav class="navbar">
-      <a href="site.html" class="logo">Advancitize</a>
-      <ul>
-          <li> <a href="site.html">Home</a></li>
-          <li> <a href="games.html">Games</a></li>
-          <li> <a href="https://canlite.online/proxe/">Proxy</a></li>
-          <li> <a href="settings.html">Settings</a></li>
-      </ul>
-      
-  </nav>
+        <a href="site.html" class="logo">Advancitize</a>
+        <ul>
+            <li><a href="site.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="https://canlite.online/proxe/">Proxy</a></li>
+            <li><a href="settings.html">Settings</a></li>
+        </ul>
+    </nav>
+
     <main>
-      <div class="login-btn">
-        <a href="settings.html" class="btn">Settings</a>
-      </div>  
+        <div class="login-btn">
+            <a href="settings.html" class="btn">Settings</a>
+        </div>  
+    </main>
+
+    <!-- Click Sound -->
+    <audio id="clickSound" src="sounds/zapsplat_multimedia_button_click_bright_002_92099.mp3" preload="auto" muted></audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const clickSound = document.getElementById("clickSound");
+
+            if (!clickSound) {
+                console.error("Audio file not found!");
+                return;
+            }
+
+            // Enable sound after first user interaction (fixes browser autoplay restriction)
+            document.body.addEventListener("pointerdown", function enableSound() {
+                clickSound.muted = false;
+                document.body.removeEventListener("pointerdown", enableSound);
+            });
+
+            // Select all buttons and links
+            const elements = document.querySelectorAll("a, button, input[type='submit']");
+
+            elements.forEach(element => {
+                element.addEventListener("pointerdown", () => {
+                    console.log("Button clicked!");
+                    clickSound.currentTime = 0;
+                    clickSound.play().catch(err => console.warn("Playback prevented:", err));
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

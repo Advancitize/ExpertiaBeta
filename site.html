@@ -13,22 +13,18 @@
         <nav class="navbar">
             <a href="index.html" class="logo">Advancitize</a>
             <ul>
-                <li> <a href="site.html".html">Home</a></li>
-                <li> <a href="games.html">Games</a></li>
-                <li> <a href="https://improved-winner-g4rq66vv6rwghv6p5-3000.app.github.dev/">Proxy</a></li>
-                <li> <a href="settings.html">Settings</a></li>
+                <li><a href="site.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="https://improved-winner-g4rq66vv6rwghv6p5-3000.app.github.dev/">Proxy</a></li>
+                <li><a href="settings.html">Settings</a></li>
             </ul>
-            
         </nav>
 
         <div class="content">
             <div class="info">
                 <h1>Expertia</h1>
-                
-<h2> The ultimate hub for unblocked games and content!</h2>
-
-<p>Tired of restrictions? Whether you're sneaking in some fun between classes or need access to blocked websites, we’ve got you covered. Play games, browse, and unlock the internet all in one place.</p>
-
+                <h2>The ultimate hub for unblocked games and content!</h2>
+                <p>Tired of restrictions? Whether you're sneaking in some fun between classes or need access to blocked websites, we’ve got you covered. Play games, browse, and unlock the internet all in one place.</p>
                 <a href="games.html" class="btn">Play Now</a>
             </div>
 
@@ -38,11 +34,11 @@
                         <h1>Login</h1>
                         <div class="input-box">
                             <input type="text" placeholder="Username" required>
-                            <i class='bx bxs-user' ></i>
+                            <i class='bx bxs-user'></i>
                         </div>
                         <div class="input-box">
                             <input type="password" placeholder="Password" required>
-                            <i class='bx bxs-lock-alt' ></i>
+                            <i class='bx bxs-lock-alt'></i>
                         </div>
                         <div class="remember-forgot">
                             <label><input type="checkbox">Remember me</label>
@@ -59,6 +55,37 @@
             </div>
         </div>
     </main>
-    
+
+    <!-- Click Sound -->
+    <audio id="clickSound" src="sounds/zapsplat_multimedia_button_click_bright_002_92099.mp3" preload="auto" muted></audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const clickSound = document.getElementById("clickSound");
+
+            if (!clickSound) {
+                console.error("Audio file not found!");
+                return;
+            }
+
+            // Enable sound after first user interaction
+            document.body.addEventListener("pointerdown", function enableSound() {
+                clickSound.muted = false;
+                document.body.removeEventListener("pointerdown", enableSound);
+            });
+
+            // Select all buttons and links
+            const elements = document.querySelectorAll("a, button, input[type='submit']");
+
+            elements.forEach(element => {
+                element.addEventListener("pointerdown", () => {
+                    console.log("Button clicked!");
+                    clickSound.currentTime = 0;
+                    clickSound.play().catch(err => console.warn("Playback prevented:", err));
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
