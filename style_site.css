@@ -262,7 +262,8 @@ a {
 
 .game-card p {
     margin-top: 5px;
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: 600;
     color: #fff;
 }
 
