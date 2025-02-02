@@ -177,3 +177,129 @@ a {
     font-weight: 600;
     margin-left: 4px;
 }
+
+/* ===== Game Launchpad ===== */
+.game-launchpad {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    max-width: 493.8px;  /* Reduced width */
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;  /* Center horizontally */
+    overflow: hidden;  /* Hide any overflow */
+}
+
+/* Search Bar */
+#searchBar {
+    width: 90%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 14px;
+}
+
+#searchBar::placeholder {
+    color: #ddd;
+}
+
+/* Horizontal Scrolling */
+.game-grid {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px;
+    max-height: 180px;
+    align-items: center;
+}
+
+/* Custom Scrollbar */
+.game-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.game-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+}
+
+.game-grid::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+/* Game Cards */
+.game-card {
+    min-width: 100px;
+    max-width: 100px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.game-card img {
+    width: 100%;
+    height: 80px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.game-card p {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* Hover Effect */
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Random Game Button */
+.random-btn {
+    display: inline-block;
+    background: #ff5722;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.random-btn:hover {
+    background: #e64a19;
+    transform: scale(1.05);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .game-launchpad {
+        max-width: 90%;  /* Make it fit smaller screens */
+    }
+
+    .game-card {
+        min-width: 90px;
+        max-width: 90px;
+    }
+
+    .game-card img {
+        height: 70px;
+    }
+}

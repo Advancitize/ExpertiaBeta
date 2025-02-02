@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expertia</title>
     <link rel="stylesheet" href="style_site.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="icon" href="favicon.png" type="image/x-icon">
 </head>
 <body>
     <main>
         <nav class="navbar">
-            <a href="site.html" class="logo">Advancitize</a>
+            <a href="index.html" class="logo">Advancitize</a>
             <ul>
                 <li><a href="site.html">Home</a></li>
                 <li><a href="games.html">Games</a></li>
@@ -24,68 +24,43 @@
             <div class="info">
                 <h1>Expertia</h1>
                 <h2>The ultimate hub for unblocked games and content!</h2>
-                <p>Tired of restrictions? Whether you're sneaking in some fun between classes or need access to blocked websites, we’ve got you covered. Play games, browse, and unlock the internet all in one place.</p>
+                <p>Play games, browse, and unlock the internet all in one place.</p>
                 <a href="games.html" class="btn">Play Now</a>
             </div>
 
-            <div class="login-wrapper">
-                <div class="login-box">
-                    <form action="">
-                        <h1>Login</h1>
-                        <div class="input-box">
-                            <input type="text" placeholder="Username" required>
-                            <i class='bx bxs-user'></i>
-                        </div>
-                        <div class="input-box">
-                            <input type="password" placeholder="Password" required>
-                            <i class='bx bxs-lock-alt'></i>
-                        </div>
-                        <div class="remember-forgot">
-                            <label><input type="checkbox">Remember me</label>
-                            <a href="#">Forgot Password?</a>
-                        </div>
-                        <a href="site.html" class="btn">Login</a>
-                        
-                        <div class="register-link">
-                            <p>Don't have an account?</p>
-                            <a href="#">Register</a>
-                        </div>
-                    </form>
+            <!-- Game Launchpad -->
+            <div class="game-launchpad glass-effect">
+                <h2>🎮 Game Launchpad</h2>
+                <input type="text" id="searchBar" placeholder="Search games..." />
+
+                <div class="game-grid" id="gameGrid">
+                    <!-- Original Games -->
+                    <div class="game-card" data-name="Slope">
+                        <img src="Slope.webp" alt="Slope">
+                        <p>Slope</p>
+                    </div>
+                    <div class="game-card" data-name="1V1.LOL">
+                        <img src="1v1.LOL.webp" alt="1v1.LOL">
+                        <p>1V1.LOL</p>
+                    </div>
+                    <div class="game-card" data-name="Basketball Stars">
+                        <img src="BasketballStars.webp" alt="Basketball Stars">
+                        <p>Basketball Stars</p>
+                    </div>
+                
+                    <!-- Added 30 More Games -->
+                    <div class="game-card" data-name="Moto X3M">
+                        <img src="Moto X3m.webp" alt="Moto X3M">
+                        <p>Moto X3M</p>
+                    </div>
                 </div>
+                
+
+                <button class="btn random-btn" id="randomGameBtn">🎲 Random Game</button>
             </div>
         </div>
     </main>
 
-    <!-- Click Sound -->
-    <audio id="clickSound" src="sounds/zapsplat_multimedia_button_click_bright_002_92099.mp3" preload="auto" muted></audio>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const clickSound = document.getElementById("clickSound");
-
-            if (!clickSound) {
-                console.error("Audio file not found!");
-                return;
-            }
-
-            // Enable sound after first user interaction
-            document.body.addEventListener("pointerdown", function enableSound() {
-                clickSound.muted = false;
-                document.body.removeEventListener("pointerdown", enableSound);
-            });
-
-            // Select all buttons and links
-            const elements = document.querySelectorAll("a, button, input[type='submit']");
-
-            elements.forEach(element => {
-                element.addEventListener("pointerdown", () => {
-                    console.log("Button clicked!");
-                    clickSound.currentTime = 0;
-                    clickSound.play().catch(err => console.warn("Playback prevented:", err));
-                });
-            });
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>

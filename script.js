@@ -69,3 +69,56 @@ signUpBtn.addEventListener("click", () => {
         text: 'For access to this site, please contact junkmail5.22.2012@gmail.com.'
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const searchBar = document.getElementById("searchBar");
+    const gameCards = document.querySelectorAll(".game-card");
+    const randomGameBtn = document.getElementById("randomGameBtn");
+
+    // Search Functionality
+    searchBar.addEventListener("input", (e) => {
+        const searchText = e.target.value.toLowerCase();
+        gameCards.forEach(card => {
+            const gameName = card.dataset.name.toLowerCase();
+            card.style.display = gameName.includes(searchText) ? "block" : "none";
+        });
+    });
+
+    // Click to Open Game
+    gameCards.forEach(card => {
+        card.addEventListener("click", () => {
+            const gameLink = card.dataset.link;
+            window.location.href = gameLink;
+        });
+    });
+
+    // Random Game Function
+    randomGameBtn.addEventListener("click", () => {
+        const visibleCards = Array.from(gameCards).filter(card => card.style.display !== "none");
+        if (visibleCards.length > 0) {
+            const randomCard = visibleCards[Math.floor(Math.random() * visibleCards.length)];
+            window.location.href = randomCard.dataset.link;
+        } else {
+            alert("No games found to pick from!");
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const searchBar = document.getElementById("searchBar");
+    const gameCards = document.querySelectorAll(".game-card");
+
+    // Search Functionality
+    searchBar.addEventListener("input", (e) => {
+        const searchText = e.target.value.toLowerCase(); // Get lowercase input for case-insensitive search
+
+        gameCards.forEach(card => {
+            const gameName = card.dataset.name.toLowerCase(); // Game name from data-name attribute
+            if (gameName.includes(searchText)) {
+                card.style.display = "block"; // Show matching game
+            } else {
+                card.style.display = "none"; // Hide non-matching game
+            }
+        });
+    });
+});

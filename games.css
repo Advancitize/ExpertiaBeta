@@ -103,8 +103,8 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     overflow: hidden; /* Ensures rounded corners are applied to the image */
     margin-top: 20px;
-    margin-left: 7.5px;
-    margin-right: 7.5px
+    margin-left: 25px;
+    margin-right: 8px
     
 }
 
