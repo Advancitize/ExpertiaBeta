@@ -32,8 +32,10 @@ a {
 }
 
 .navbar .logo {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
+    color: #fff;
+    text-decoration: none;
 }
 
 .navbar ul {
