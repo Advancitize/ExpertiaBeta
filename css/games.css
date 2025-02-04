@@ -20,7 +20,7 @@
 
 body {
     height: 100vh;
-    background: url(Background.jpg);
+    background: url(/assets/images/Background.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -132,3 +132,39 @@ body {
     
 }
 
+.card {
+    cursor: pointer;                /* Indicates the card is clickable */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);         /* Hover zoom effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#searchBar {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+#searchBar:focus {
+    border-color: #007BFF; /* Highlight on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+#gameGrid {
+    display: flex; /* or grid */
+    flex-wrap: wrap;
+    gap: 10px;
+}

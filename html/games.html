@@ -23,66 +23,83 @@
             <a href="games.html" class="btn">Games</a>
         </div>  
 
-        <div class="card">
-            <img src="/assets/images/Slope.webp" alt="Slope Game Thumbnail" class="card-image">
-            <a href="/ExpertiaBeta/games/slope/index.html" class="gamelogo">Slope</a>
+        <!-- 🔍 Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search games...">
+        </div>        
+
+        <!-- 🎮 Game Cards -->
+        <div id="gameGrid">
+            <div class="card" data-link="/ExpertiaBeta/games/slope/index.html">
+                <img src="/assets/images/Slope.webp" alt="Slope Game Thumbnail" class="card-image">
+                <a href="/ExpertiaBeta/games/slope/index.html" class="gamelogo">Slope</a>
+            </div>
+
+            <div class="card" data-link="/ExpertiaBeta/games/motox3m/index.html">
+                <img src="/assets/images/Moto X3m.webp" alt="Moto X3m Thumbnail" class="card-image">
+                <a href="/ExpertiaBeta/games/motox3m/index.html" class="gamelogo">Moto X3m</a>
+            </div>  
+
+            <div class="card" data-link="/ExpertiaBeta/games/1v1lol/index.html">
+                <img src="/assets/images/1v1.LOL.webp" alt="1V1.LOL Thumbnail" class="card-image">
+                <a href="/ExpertiaBeta/games/1v1lol/index.html" class="gamelogo">1V1.LOL</a>
+            </div>  
+
+            <div class="card" data-link="/ExpertiaBeta/games/basketball-stars/index.html">
+                <img src="/assets/images/BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
+                <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
+            </div>
         </div>
 
-        <div class="card">
-            <img src="/assets/images/Moto X3m.webp" alt="Moto X3m Thumbnail" class="card-image">
-            <a href="/ExpertiaBeta/games/motox3m/index.html" class="gamelogo">Moto X3m</a>
-        </div>  
+        <!-- 🔊 Click Sound -->
+        <audio id="clickSound" src="/assets/sounds/zapsplat_multimedia_button_click_bright_002_92099.mp3" preload="auto" muted></audio>
 
-        <div class="card">
-            <img src="/assets/images/1v1.LOL.webp" alt="1V1.LOL Thumbnail" class="card-image">
-            <a href="/ExpertiaBeta/games/1v1lol/index.html" class="gamelogo">1V1.LOL</a>
-        </div>  
+        <!-- 🚀 JavaScript Integration -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const clickSound = document.getElementById("clickSound");
+                const searchBar = document.getElementById("searchBar");
+                const gameCards = document.querySelectorAll(".card");
+                const gameGrid = document.getElementById("gameGrid");
 
-        <div class="card">
-            <img src="/assets/images/BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
-            <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
-        </div>
+                // ✅ Click Sound Logic
+                if (clickSound) {
+                    document.body.addEventListener("pointerdown", function enableSound() {
+                        clickSound.muted = false;
+                        document.body.removeEventListener("pointerdown", enableSound);
+                    });
 
-        <div class="card">
-            <img src="/assets/images/BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
-            <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
-        </div>
+                    const clickableElements = document.querySelectorAll("a, button, input[type='submit']");
+                    clickableElements.forEach(element => {
+                        element.addEventListener("pointerdown", () => {
+                            clickSound.currentTime = 0;
+                            clickSound.play().catch(err => console.warn("Playback prevented:", err));
+                        });
+                    });
+                }
 
-        <div class="card">
-            <img src="/assets/images/BasketballStars.webp" alt="Basketball Stars Thumbnail" class="card-image">
-            <a href="/ExpertiaBeta/games/basketball-stars/index.html" class="gamelogo">Basketball Stars</a>
-        </div>
+                // ✅ Search Functionality
+                if (searchBar) {
+                    searchBar.addEventListener("input", (e) => {
+                        const searchText = e.target.value.toLowerCase().trim();
+                        gameCards.forEach(card => {
+                            const gameTitle = card.querySelector(".gamelogo").textContent.toLowerCase();
+                            card.style.display = gameTitle.includes(searchText) ? "block" : "none";
+                        });
+                    });
+                }
 
-    <!-- Click Sound -->
-    <audio id="clickSound" src="/assets/sounds/zapsplat_multimedia_button_click_bright_002_92099.mp3" preload="auto" muted></audio>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const clickSound = document.getElementById("clickSound");
-
-            if (!clickSound) {
-                console.error("Audio file not found!");
-                return;
-            }
-
-            // Enable sound after first user interaction (fixes browser autoplay restriction)
-            document.body.addEventListener("pointerdown", function enableSound() {
-                clickSound.muted = false;
-                document.body.removeEventListener("pointerdown", enableSound);
-            });
-
-            // Select all buttons and links
-            const elements = document.querySelectorAll("a, button, input[type='submit']");
-
-            elements.forEach(element => {
-                element.addEventListener("pointerdown", () => {
-                    console.log("Button clicked!");
-                    clickSound.currentTime = 0;
-                    clickSound.play().catch(err => console.warn("Playback prevented:", err));
+                // ✅ Make Entire Card Clickable
+                gameCards.forEach(card => {
+                    card.addEventListener("click", (event) => {
+                        const gameLink = card.dataset.link || card.querySelector("a")?.href;
+                        if (gameLink) {
+                            window.location.href = gameLink;
+                        }
+                    });
                 });
             });
-        });
-    </script>
-
+        </script>
+    </main>
 </body>
 </html>
