@@ -1,63 +1,67 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-*{
+/* ===== Global Styles ===== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
-.li {
-    padding: 100px;
-    color: white;
-    
-}
-
-.login-btn {
-    padding-left: 585px;
-    padding-top: 15px;
-}
-
 body {
-    height: 100vh;
+    min-height: 100vh;
     background: url(/assets/images/Background.jpg);
     background-size: cover;
     background-position: center;
+    transition: background 0.5s, color 0.5s;
+    color: white;
+    display: flex;
+    justify-content: center;     /* Center horizontally */
+    align-items: center;         /* Center vertically */
+    padding: 20px;               /* Padding for small screens */
+    overflow: hidden;
 }
 
+/* ===== Navbar ===== */
 .navbar {
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
-    padding: 25px 100px;
+    padding: 20px 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: background 0.5s;
 }
 
 .navbar .logo {
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 700;
     color: #fff;
     text-decoration: none;
-    margin-left: -37px;
 }
-
 
 .navbar ul {
     display: flex;
-    color: #fff;
+    list-style: none;
 }
 
 .navbar ul li {
     position: relative;
-    list-style: none;
-    margin-left: 35px;
+    margin-left: 30px;
 }
 
-.navbar ul li ::after {
+.navbar ul li a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar ul li::after {
     content: '';
     position: absolute;
     left: 0;
@@ -66,29 +70,120 @@ body {
     height: 2px;
     background: #fff;
     transform: scaleX(0);
-    transition: transform .5s;
+    transition: transform 0.5s;
 }
 
-.navbar ul li :hover::after {
+.navbar ul li:hover::after {
     transform: scaleX(1);
 }
 
-.navbar ul li a {
-    font-size: 20px;
-    font-weight: 500;
-    color: #fff;
-    text-decoration: none;
+/* ===== Settings Container ===== */
+.settings-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 3px solid rgba(225, 225, 225, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    padding: 30px 50px;                  /* Reduced padding for a shorter height */
+    max-width: 90%;
+    width: 1000px;
+    max-height: 600px;                   /* Set a maximum height */
+    text-align: center;
+    transition: background 0.3s, box-shadow 0.3s;
+    overflow-y: auto;                    /* Enable scroll if content overflows */
 }
 
+.settings-container h1 {
+    font-size: 42px;                    /* Slightly reduced title size */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ===== Settings Grid ===== */
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 10px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ===== Setting Box Styles ===== */
+.setting-box {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
+    padding: 25px;                      /* Reduced padding inside the box */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.setting-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.setting-box h2 {
+    font-size: 22px;                    /* Slightly smaller headings */
+    margin-bottom: 15px;
+}
+
+/* ===== Button Styles ===== */
 .btn {
     display: inline-block;
-    padding: 12px 60px;
+    padding: 12px 25px;                 /* Smaller buttons */
     backdrop-filter: blur(10px);
-    border-radius: 40px;
-    border: 2px solid rgba(225, 225, 225, .2);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    font-size: 30px;
+    border-radius: 10px;
+    border: 2px solid rgba(225, 225, 225, 0.3);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    font-size: 18px;
     color: white;
     font-weight: 600;
+    background: rgba(0, 0, 0, 0.6);
     text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+}
+
+/* ===== Light Theme ===== */
+.light-theme {
+    background-image: url(/assets/images/loginbg.jpg);
+    color: #121212;
+}
+
+.light-theme .setting-box {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .btn {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.light-theme .btn:hover {
+    background: rgba(0, 0, 0, 1);
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+    .settings-container {
+        padding: 20px;
+        max-height: 500px;              /* Reduce max height for smaller screens */
+    }
+
+    .settings-grid {
+        grid-template-columns: 1fr;     /* Single column on small screens */
+    }
+
+    .btn {
+        width: 100%;                    /* Full-width buttons on mobile */
+    }
 }

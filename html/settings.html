@@ -14,46 +14,44 @@
             <li><a href="site.html">Home</a></li>
             <li><a href="games.html">Games</a></li>
             <li><a href="https://canlite.online/proxe/">Proxy</a></li>
-            <li><a href="settings.html">Settings</a></li>
+            <li><a href="settings.html" class="active">Settings</a></li>
         </ul>
     </nav>
 
-    <main>
-        <div class="login-btn">
-            <a href="settings.html" class="btn">Settings</a>
-        </div>  
+    <main class="settings-container">
+        <h1>⚙️ Settings</h1>
+
+        <!-- 📦 Settings Grid -->
+        <div class="settings-grid">
+            <!-- 🎨 Theme Toggle -->
+            <div class="setting-box">
+                <h2>Change Theme</h2>
+                <button id="themeToggle" class="btn">Toggle Light/Dark Mode</button>
+            </div>
+
+            <!-- 🕵️ Tab Cloaking (Placeholder for now) -->
+            <div class="setting-box">
+                <h2>Tab Cloaking</h2>
+                <button class="btn">Coming Soon</button>
+            </div>
+
+            <!-- 🚨 Panic Key (Placeholder for now) -->
+            <div class="setting-box">
+                <h2>Panic Key</h2>
+                <button class="btn">Coming Soon</button>
+            </div>
+
+            <!-- 🔍 Click-off Cloaking (Placeholder for now) -->
+            <div class="setting-box">
+                <h2>Click-off Cloaking</h2>
+                <button class="btn">Coming Soon</button>
+            </div>
+        </div>
     </main>
 
     <!-- Click Sound -->
     <audio id="clickSound" src="/assets/sounds/zapsplat_multimedia_button_click_bright_002_92099.mp3" preload="auto" muted></audio>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const clickSound = document.getElementById("clickSound");
-
-            if (!clickSound) {
-                console.error("Audio file not found!");
-                return;
-            }
-
-            // Enable sound after first user interaction (fixes browser autoplay restriction)
-            document.body.addEventListener("pointerdown", function enableSound() {
-                clickSound.muted = false;
-                document.body.removeEventListener("pointerdown", enableSound);
-            });
-
-            // Select all buttons and links
-            const elements = document.querySelectorAll("a, button, input[type='submit']");
-
-            elements.forEach(element => {
-                element.addEventListener("pointerdown", () => {
-                    console.log("Button clicked!");
-                    clickSound.currentTime = 0;
-                    clickSound.play().catch(err => console.warn("Playback prevented:", err));
-                });
-            });
-        });
-    </script>
-
+    <script src="/js/settings.js"></script>
 </body>
 </html>

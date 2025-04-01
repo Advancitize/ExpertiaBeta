@@ -8,7 +8,7 @@
 }
 
 body{
-    background: url(loginbg.jpg);
+    background: url(/assets/images/loginbg.jpg);
     display: flex;
     align-items: center;
     justify-content: center;
